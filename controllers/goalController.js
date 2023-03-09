@@ -8,7 +8,7 @@ const Goal = require("../model/goalModel");
  * @access           Privite
  */
 const getGoals = asyncHandler(async (req, res) => {
-  const goal = await Goal.find();
+  const goal = await Goal.find({ user: req.user });
 
   res.status(200).send(goal);
 });
@@ -24,6 +24,7 @@ const setGoals = asyncHandler(async (req, res) => {
   }
 
   const newGoal = await Goal.create({
+    user: req.user.id,
     text: req.body.text,
   });
 

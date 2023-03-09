@@ -73,7 +73,13 @@ const loginUser = asyncHandler(async (req, res) => {
  * @access        Public
  */
 const getMe = asyncHandler(async (req, res) => {
-  res.status(200).json({ msg: "Get user data" });
+  const { _id, name, email } = await User.findById(req.user.id);
+
+  res.status(200).json({
+    id: _id,
+    name,
+    email,
+  });
 });
 
 /**
