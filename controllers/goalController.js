@@ -3,7 +3,7 @@ const asyncHandler = require("express-async-handler");
 const Goal = require("../model/goalModel");
 
 /**
- * @description   Get goals
+ * @desc               Get goals
  * @route              GET /api/goals
  * @access           Privite
  */
@@ -14,7 +14,7 @@ const getGoals = asyncHandler(async (req, res) => {
 });
 
 /**
- * @description   Set goals
+ * @desc              Set goals
  * @route              POST /api/goals
  * @access           Privite
  */
@@ -31,7 +31,7 @@ const setGoals = asyncHandler(async (req, res) => {
 });
 
 /**
- * @description   Update goals
+ * @desc              Update goals
  * @route              PUT /api/goals/:id
  * @access           Privite
  */
@@ -51,7 +51,7 @@ const updateGoal = asyncHandler(async (req, res) => {
 });
 
 /**
- * @description   Delete goals
+ * @desc               Delete goals
  * @route              DELETE /api/goals/:id
  * @access           Privite
  */
